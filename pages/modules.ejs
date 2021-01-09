@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Программный модули с открытым кодом."/>
+    <meta name="keywords" content="программа, программу, сайт, веб-приложение,
+    разработка, разработку, разработать, купить, заказать, услуга, услугу, 
+    оптимизация, оптимизировать, модуль, быстро, дёшево"/>
+    <title>Модули</title>
+    <%-include("templates/linkscript.html")%>
+    
+</head>
+<body>
+    <%-include("templates/header.html")%>
+
+    <section id="offers-table" class="c-bg-color2 h-70vh">
+        <div class="container">
+            <div class="col-12 py-5 row align-items-center">
+                <div class="col-12">
+                    <h1 class="text-white text-weight-light text-wrap display-4 pb-5">IT-Компания_PROD.<span class="function-color">get_modules_info</span>()</h1>
+                    <p class="text-white code-style col-7">module_block.<span class="argument-color">innerHTML</span>=
+                        <span class="string-color">"На данной страницы представлены модули, 
+                        написанные на разных языках программирования и находящиеся в свободном доступе."</span>;</p>
+                        <p class="my-5 p-4 border border-light text-white">
+                        <span class="php-color">&lt;?php</span> <span class="argument-color">$connect</span>=
+                        <span class="php-function-color">mysqli_connect</span>(<span class="argument-color">$p</span>, 
+                        <span class="argument-color">$r</span>, <span class="argument-color">$o</span>, <span class="argument-color">$d</span>); 
+                        <span class="function-color">if</span>(<span class="argument-color"></span>!<span class="argument-color">$connect</span>)
+                        <span class="function-color"></span>(<span class="smug-string-color">"Ошибка"</span>);
+
+                        <span class="argument-color">$result</span> = <span class="argument-color">$connect</span>-><span class="php-function-color">query</span>(<span class="smug-string-color">"SELECT * FROM Модули"</span>);<br`````````````````````````````````````````````````````>
+
+                        <span class="argument-color">$rows</span> = <span class="argument-color">$result</span>-><span class="php-function-color">num_rows</span>;
+
+                        <span class="argument-color">$list</span> = <span class="php-function-color">array</span>();
+                        <span class="function-color">for</span>(<span class="argument-color">$i</span>=<span class="terminal-color">0</span>;<span class="argument-color">$i</span>&lt;<span class="argument-color">$rows</span>;++<span class="argument-color">$i</span>)
+                        {
+                            <span class="argument-color">$result</span>-&gt;<span class="php-function-color">data_seek</span>(<span class="argument-color">$i</span>);
+                            <span class="argument-color">$data</span> = <span class="argument-color">$result</span>-&gt;<span class="php-function-color">fetch_array</span>(MYSQLI_NUM);
+
+                            <span class="php-function-color">array_push</span>(<span class="argument-color">$list</span>, <span class="php-function-color">array</span>(<span class="smug-string-color">"login"</span>=&gt;<span class="argument-color">$data[0]</span>, <span class="smug-string-color">"email"</span>=&gt;<span class="argument-color">$data[1]</span>));
+                        }
+
+                        <span class="argument-color">$connect</span>-&gt;<span class="php-function-color">close</span>();
+
+                        <span>return</span> <span class="argument-color">$list</span>;
+
+                        <span class="php-color">?&gt;</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="modules-modules" class="py-5 scroll c-bg-color3" style="height: 120vh;">
+
+        <div id="carouselExampleControls" data-interval="false" class="h-100 carousel slide" data-ride="carousel">
+            
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active h-100 align-items-center">
+                    <h1 class="text-center border-bottom text-white p-5 text-wrap display-4">prod.<span class="function-color">Get_All_Modules</span>()</h1>
+                    <div class="col-12 justify-content-center d-flex">
+                        <div class="col-8 row pt-5" id="allmoduleblock">
+                            <% info.forEach(function(module){ %> 
+                                <a href="/modulpage/module_<%=module.module_id%>" class="border border-light c-bg-color col-xl-2 mx-2 p-2 col-12 h-20vh">
+                                    <div class="col col-md-12 h-40vh" id="module-block ">
+                                        <h2 class="text-center text-uppercase display-3"><%=module.pl_expansion.replace(/\./gi,'')%></h2>
+                                        <p class="text-white text-center"><%=module.module_name%></p> 
+                                    </div>
+                                </a> 
+                            <% }); %>
+                        </div>
+                    </div>      
+                </div>
+
+                <div class="carousel-item h-100">
+                    <h1 class="text-center border-bottom text-white p-5 text-wrap display-4"><span class="js-color">&lt;script&gt;</span><span class="argument-color">prod</span>.<span class="js-color">Get_Module</span>(<span class="string-color">"JavaScript"</span>).<span class="js-class-color">as_Array</span><span class="js-color">&lt;/script&gt;</span></h1>
+                    <div class="col-12 justify-content-center d-flex">
+                        <div class="col-8 row pt-5" id="jsmoduleblock">
+                        <% info.forEach(function(module){%>
+                            <%if(module.pl_expansion.replace(/\./gi,'')=="js"){%> 
+                                <a href="/modulpage/module_<%=module.module_id%>" class="border border-light c-bg-color col-xl-2 mx-2 p-2 col-12 h-20vh">
+                                    <div class="col col-md-12 h-40vh" id="module-block ">
+                                        <h2 class="text-center text-uppercase display-3"><%=module.pl_expansion.replace(/\./gi,'')%></h2>
+                                        <p class="text-white text-center"><%=module.module_name%></p> 
+                                    </div>
+                                </a>
+                            <%}%>
+                        <% }); %>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item h-100">
+                    <h1 class="text-center border-bottom text-white p-5 text-wrap display-4"><span class="terminal-color">Modules</span>.<span class="function-color">print_f</span>(<span class="smug-string-color">"PHP"</span>);</h1>
+                    <div class="col-12 justify-content-center d-flex">
+                        <div class="col-8 row pt-5" id="phpmoduleblock">
+                            <% info.forEach(function(module){ %>
+                                <%if(module.pl_expansion.replace(/\./gi,'')=="php"){%> 
+                                    <a href="/modulpage/module_<%=module.module_id%>" class="border border-light c-bg-color col-xl-2 mx-2 p-2 col-12 h-20vh">
+                                        <div class="col col-md-12 h-40vh" id="module-block ">
+                                            <h2 class="text-center text-uppercase display-3"><%=module.pl_expansion.replace(/\./gi,'')%></h2>
+                                            <p class="text-white text-center"><%=module.module_name%></p> 
+                                        </div>
+                                    </a>
+                            <%}%>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item h-100">
+                    <h1 class="text-center border-bottom text-white p-5 text-wrap display-4"><span class="argument-color">def</span> <span class="terminal-color">get_module</span>(<span class="python-color">PYTHON</span>)</h1>
+                    <div class="col-12 justify-content-center d-flex">
+                        <div class="col-8 row pt-5" id="pythonmoduleblock">
+                        <% info.forEach(function(module){ %>
+                            <%if(module.pl_expansion.replace(/\./gi,'')=="py"){%>  
+                                <a href="/modulpage/module_<%=module.module_id%>" class="border border-light c-bg-color col-xl-2 mx-2 p-2 col-12 h-20vh">
+                                    <div class="col col-md-12 h-40vh" id="module-block ">
+                                        <h2 class="text-center text-uppercase display-3"><%=module.pl_expansion.replace(/\./gi,'')%></h2>
+                                        <p class="text-white text-center"><%=module.module_name%></p> 
+                                    </div>
+                                </a>
+                            <%}%> 
+                        <% }); %>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item h-100">
+                    <h1 class="text-center border-bottom text-white p-5 text-secondary display-4">&lt;<span class="php-color">html</span>&gt;&lt;<span class="php-color">style</span>&gt;<span class="js-color">html</span>{<span class="argument-color">content</span>:<span class="smug-string-color">"HTML/CSS"</span>}&lt;<span class="php-color">/style</span>&gt;&lt;<span class="php-color">/html</span>&gt;</h1>
+                    <div class="col-12 justify-content-center d-flex">
+                        <div class="col-8 row pt-5" id="htmlcssmoduleblock">
+                        <% info.forEach(function(module){ %> 
+                            <%if(module.pl_expansion.replace(/\./gi,'')=="html"||module.pl_expansion.replace(/\./gi,'')=="css"){%> 
+                                <a href="/modulpage/module_<%=module.module_id%>" class="border border-light c-bg-color col-xl-2 mx-2 p-2 col-12 h-20vh">
+                                    <div class="col col-md-12 h-40vh" id="module-block ">
+                                        <h2 class="text-center text-uppercase display-3"><%=module.pl_expansion.replace(/\./gi,'')%></h2>
+                                        <p class="text-white text-center"><%=module.module_name%></p> 
+                                    </div>
+                                </a>
+                            <%}%> 
+                        <% }); %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+ 
+    </section>
+
+    <%-include("templates/footer.html")%>
+</body>
+</html>

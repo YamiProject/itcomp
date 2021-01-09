@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <title><%=info.module_name%></title>
+    <%-include("templates/linkscript.html")%>
+    
+</head>
+<body class="c-bg-color2">
+    <%-include("templates/header.html")%>
+
+    <section id="modulpage-module">
+        <div class="container">
+           
+            <div class="col-12 pt-5">
+                    <%-include(info.module_page)%>
+            </div>
+
+            
+            <div class=""></div>
+                <div class="col-12 py-5 row">
+                    <a href="/files/modules/<%=info.module_file%>" class="btn d-block col-12 c-bt-color text-white" download>Скачать файл</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%-include("templates/footer.html")%>
+</body>
+</html>

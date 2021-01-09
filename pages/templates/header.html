@@ -1,0 +1,156 @@
+<header class="border-bottom ">
+
+    <!--Меню-->
+    <div class="container-fluid h-100 py-3 c-bg-color">
+
+        <div class="col-12 d-flex d-xl-none my-2 justify-content-center">
+            <button id="show-navbar" class="btn rounded-0 col-md-2 col-12  py-4 px-0 c-bt-color border code-style">Menu()</button>
+        </div>
+
+        <!--Мобильная версия-->
+        <div class="align-items-center d-xl-none d-none col-12" id="nav-mobile-menu-block" style="display: none;">
+            <!--Меню навигации-->
+            <div class="w-100 mb-5">
+                <nav class="col-12 align-items-center">
+                    <button onclick="location.href='/'" class="btn rounded-0 col-12 mt-5 py-4 px-5 c-bt-color border border-left-0 border-right-0">Главная</button>
+                    <button onclick="location.href='/offers'" class="btn rounded-0 col-12 py-4 px-5 c-bt-color border border-left-0 border-right-0">Предложения</button>
+                    <button onclick="location.href='/modules'" class="btn rounded-0 col-12 py-4 px-5 c-bt-color border border-left-0 border-right-0">Модули</button>
+                    <button onclick="location.href='/support'" class="btn rounded-0 col-12 py-4 px-5 c-bt-color border border-left-0 border-right-0">FaQ</button>
+
+                    <% if(sess==false){%>
+                        <!--Кнопки входа и регистрации+формы/Профиль--> 
+                            <button class="btn rounded-0 col-12 py-4 c-bt-color border border-left-0 border-right-0" data-toggle="modal" data-target="#regForm">Регистрация</button>
+                            <button class="btn rounded-0 col-12 py-4 c-bt-color border border-left-0 border-right-0" data-toggle="modal" data-target="#loginForm">Вход</button>
+                            
+                        <% }else{%>
+                            <button onclick="location.href='/profile'" class="btn rounded-0 col-12 py-4 px-5 c-bt-color border border-left-0 border-right-0">Профиль</button>
+                        <% }%>
+                </nav>
+            </div>
+        </div>
+        
+        <!--Декстоп версия-->
+        <div class="row align-items-center h-100 d-xl-flex d-none" id="nav-menu-block">
+            <!--Логотип-->
+            <div class="row col-1 mx-2 align-items-center">
+                <a href="/"><img src="/img/modules_img/LOGO.png" alt="LOGO"></a>
+            </div>
+
+            <!--Меню навигации-->
+            <div class="row col-xl-8 col-12 justify-content-start">
+                <nav class="row align-items-center">
+                    <ul class="row align-items-center navigation-p">
+                        <li><a href="/" class="m-2">Главная</a></li>
+                        <li><a href="/offers" class="m-2">Предложения</a></li>
+                        <li><a href="/modules" class="m-2">Модули</a></li>
+                        <li><a href="/support" class="m-2">FaQ</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <% if(sess==false){%>
+            <!--Кнопки входа и регистрации+формы/Профиль-->
+            <div class="row col-3 justify-content-start">
+                <button class="btn c-bt-color m-1 btn-outline-light" data-toggle="modal" data-target="#regForm">Регистрация</button>
+                <button class="btn c-bt-color m-1 btn-outline-light" data-toggle="modal" data-target="#loginForm">Вход</button>
+            </div>
+
+        <% }else{%>
+            <div class="row col-3 justify-content-start">
+                <div class="btn-group row align-items-center">
+                    <a class="text-white ml-5 profile-link" href="/profile"><%=sessemail%></a>
+                </div>
+            </div>
+            <% }%>
+        </div>
+
+        <!--Модальное окно: Вход-->
+        <div class="modal hide fade" id="loginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Вход</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+
+                    <div class="modal-body">
+                            <div class="modal-body mx-3">
+                                <div class="md-form mb-3">
+                                    <label data-error="wrong" data-success="right" for="loginEmail">Почта/Телефон</label>
+                                    <input type="text" id="loginEmailform" class="form-control validate" placeholder="example@abc.com" required>
+                                </div>
+
+                                <div class="md-form mb-3">
+                                    <label data-error="wrong" data-success="right" for="loginPass">Пароль</label>
+                                    <input type="password" id="loginPassform" class="form-control validate" placeholder="Пароль..." required>
+                                </div>
+
+                                <div class="md-form mb-3">
+                                    <span id="loginError" class="text-danger"></span>
+                                </div>
+
+
+                                <div class="modal-footer d-flex justify-content-end">
+                                    <button class="btn c-bt-color col-4" id="loginbtnclick">Войти</button>
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Модальное окно: Регистрация-->
+        <div class="modal hide fade" id="regForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Регистрация</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+
+                <div class="modal-body">
+                        <div class="modal-body mx-3">
+                            <div class="md-form mb-3">
+                                <label data-error="wrong" data-success="right" for="regEmail">Почта</label>
+                                <input type="text" id="regEmailform" class="form-control validate" placeholder="example@abc.com" required>
+                            </div>
+
+                            <div class="md-form mb-3">
+                                <label data-error="wrong" data-success="right" for="regPh">Телефон</label>
+                                <input  type="text" id="regNumform" class="form-control validate" placeholder="Телефон..." maxlength="11" required>                   
+                            </div>
+
+                            <div class="md-form mb-5">
+                                <label data-error="wrong" data-success="right" for="regPass">Пароль</label>
+                                <input type="password" id="regPassform" class="form-control validate" placeholder="Пароль..." required>                   
+                            </div>
+
+                            <div class="md-form mb-3">
+                                <label data-error="wrong" data-success="right" for="regName">Имя</label>
+                                <input type="text" id="regNameform" class="form-control validate" placeholder="Имя..." required>                   
+                            </div>
+
+                            <div class="md-form mb-3">
+                                <label data-error="wrong" data-success="right" for="regSName">Фамилия</label>
+                                <input type="text" id="regSNameform" class="form-control validate" placeholder="Фамилия..." required>                   
+                            </div>
+
+                            <div class="md-form mb-3">
+                                <span id="regError" class="text-danger"></span>
+                            </div>
+
+                            <div class="modal-footer d-flex justify-content-end">
+                                <button id="regbtnclick" class="btn c-bt-color col-12">Зарегестрироваться</button>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

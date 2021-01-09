@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Услуги компании Prod."/>
+    <meta name="keywords" content="программа, программу, сайт, веб-приложение,
+    разработка, разработку, разработать, купить, заказать, услуга, услугу, 
+    оптимизация, оптимизировать, модуль, быстро, дёшево"/>
+    <title>Предложения</title>
+    <%-include("templates/linkscript.html")%>
+    
+</head>
+<body>
+    <%-include("templates/header.html")%>
+
+    <section id="offers-table" class="c-bg-color2 h-70vh">
+        <div class="container">
+            <div class="col-12 py-5 row align-items-center ">
+                <div class="col-12">
+                    <h1 class="text-white text-weight-light text-wrap display-4 pb-5">IT-Компания_PROD.<span class="function-color">get_offers</span>()</h1>
+                    <p class="text-white code-style col-7">offers_block.<span class="argument-color">innerHTML</span>=<span class="string-color">"На данной странице Вы можете просмотреть список наших предложений и таблицу расценок. Также, именно здесь вы можете перейти к созданию заказа."</span>;</p>
+                    <p class="my-5 p-4 border border-light text-white"><span class="string-color">$</span>(<span class="argument-color">document</span>).<span class="js-color">ready</span>({
+                        <span class="function-color">function modules_GET</span>(){offers_block.<span class="js-class-color">forEach</span>(<span class="argument-color">element</span> =>{
+                            offer_id_block.<span class="argument-color">innerHTML</span>.<span class="js-color">appendTo</span>(
+                            <span class="string-color">"&lt;td&gt;"</span> + <span class="argument-color">element</span>.<span class="argument-color">program_name</span> + <span class="string-color">"&lt;/td&gt;
+                            &lt;td&gt;"</span> <span class="argument-color">element</span>.<span class="argument-color">opt_price</span> + <span class="string-color">" &lt;/td&gt;
+                            &lt;td&gt;"</span> <span class="argument-color">element</span>.<span class="argument-color">dev_price</span> + <span class="string-color">"&lt;/td&gt;
+                            &lt;td&gt;"</span> <span class="argument-color">element</span>.<span class="argument-color">prod_price</span> + <span class="string-color">"&lt;/td&gt;</span>
+                        );});};});
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="c-bg-color3 py-5">
+        <div class="container">
+            <h1 class="text-white text-center display-4">prod.<span class="function-color">get_prices</span>()</h1>
+            <div class="col-12 pt-5">
+                <table class="table text-center c-bg-color3">
+                    <tr class="c-bg-color3 text-white p-5">
+                        <th>/ProdComp/</th>
+                        <th>Оптимизация</th>
+                        <th>Разработка</th>
+                        <th>Prod+</th>
+                    </tr>
+
+                    <%for (let i = 0; i < info.length; i++) {%>
+                    <tr>
+                        <td class="text-white"><%=info[i]%></td>
+                        <td class="text-white"><%=info[i+2]%></td>
+                        <td class="text-white"><%=info[i+4]%></td>
+                        <td class="text-white"><%=info[i+6]%></td>
+                    </tr>
+                    <% i+=6;}%>
+                </table>
+            </div>
+
+            <div class="col-12 mt-n3 pb-5">
+                <% if(sess!==false){%>
+                <button class="btn c-bt-color rounded-0 py-5 col-12 text-white" onclick="window.location='/order'">Попробовать сейчас</button>
+                <% }else{%>
+                    <button class="btn c-bt-color rounded-0 py-5 col-12 text-white" data-target="#loginForm" data-toggle="modal">Попробовать сейчас</button>    
+                <% }%>
+            </div>
+        </div>
+    </section>
+
+    <%-include("templates/footer.html")%>
+</body>
+</html>

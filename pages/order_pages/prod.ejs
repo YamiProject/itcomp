@@ -1,0 +1,54 @@
+<div class="col row">
+    <label for="ProdOrderName" class="text-white">Укажите общее название вашего проекта:</label>
+    <input type="text" id="ProdOrderName" class="form-control border border-secondary">
+</div>
+
+<div class="col mt-3 row">
+    <label for="ProdOrderText" class="text-white">Введите описание того, что выхотите видеть:</label>
+    <textarea cols="30" rows="10" id="ProdOrderText" class="form-control border border-secondary"></textarea>
+</div>
+
+<div class="col-12 mt-3 row">
+        <label for="ProdCat" class="text-white">Выберите категорию веб-приложения:</label>
+        <select id="ProdCat" class="form-control border border-secondary">
+            <option value="" hidden></option>
+            <option value="Интернет_магазин">Интернет-магазин</option>
+            <option value="Офисное_приложение">Офисное приложение</option>
+            <option value="Игровое_приложение">Игровое приложение</option>
+            <option value="Кроссплатформенное_приложение">Кроссплатформенное приложение</option>
+        </select>
+    </div>
+
+    <div class="col-12 mt-3 row">
+        <label for="selectPr" class="text-white">Выберите язык, на котором будет написано приложение:</label>
+        <select name="" id="selectPr" class="form-control border border-secondary">
+            <option value="" hidden></option>
+            <%pl.forEach(element => {%>
+                <%if(element.pl_name!=="HTML" && element.pl_name!=="CSS"){%>
+                <option value="<%=element.pl_expansion%>"><%=element.pl_name%></option>
+                <%}%>
+            <%})%>
+        </select>
+    </div>
+
+    <div class="col-12 my-4 ml-1 row">
+        <input type="checkbox" name="" id="checkIt" class="form-check-input border border-secondary"><label for="checkIt" class="form-check-label text-white">Использовать фреймворки</label> 
+    </div>
+
+    <div class="col-12 mt-3 row">
+        <label for="pagesCount" class="text-white">Количество страниц:</label>
+        <select id="pagesCount" class="form-control border border-secondary">
+            <option value="" hidden></option>
+            <option value="5">5</option>
+            <option value="6_10">6-10</option>
+            <option value="11_15">11-15</option>
+            <option value="16_20">16-20</option>
+            <option value="20>">20></option>
+        </select>
+    </div>
+
+
+<div class="col my-4 row justify-content-end">
+    <button class="btn col-12 mt-4 c-bt-color py-4 border-secondary border text-white" id='Calculate'>Рассчитать...</button>
+</div> 
+<script>$("input, select, textarea").focus(function(){$(this).removeClass("border-danger")})</script>

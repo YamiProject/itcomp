@@ -1,0 +1,953 @@
+	
+    <div class="my-3 col-12 cont">
+        <h1 class="mt-5 text-center m1">1. Задачи на циклы</h1>
+    
+    
+    <script type="text/javascript">
+        function asdf()
+        {
+            var gf = document.getElementById('block1');
+            if(gf.style.display=="none")
+            gf.style.display="block";
+            else
+            gf.style.display="none";
+            
+        }
+    </script>
+    
+    <div class="mt-3 col-12 conter" id="block1"> 
+    
+    <p class='my-3'><b>Задача 1.</b> Выведите столбец чисел от 1 до 50.</p>
+    <script type="text/javascript">
+        for(let i=1;i<=50;i++)
+        {
+            document.write(i+" ");
+        }
+    </script>
+
+    <pre class="my-5 border py-5">
+        for(let i=1;i&lt;=50;i++)
+        {
+            document.write(i+" ");
+        } 
+    </pre>
+
+    <p class='my-3'><b>Задача 2.</b> Дан массив с элементами [1, 2, 3, 4, 5]. С помощью цикла for выведите все эти элементы на экран.</p>
+    <script type="text/javascript">
+        var a =[1,2,3,4,5];
+        for(let i=0;i<a.length;i++)
+        {
+            document.write(a[i]+" ");
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        
+        var a =[1,2,3,4,5];
+        for(let i=0;i&lt;a.length;i++)
+        {
+            document.write(a[i]+" ");
+        }
+        
+    </pre>
+
+    <p class='my-3'><b>Задача 3.</b> Дан массив с элементами [2, 3, 4, 5]. С помощью цикла for найдите произведение элементов этого массива.</p>
+    <script type="text/javascript">
+        var a =[2,3,4,5];
+        var c= 1;
+        for(let i=0;i<a.length;i++)
+        {
+            c*=a[i];
+        }
+    
+        document.write(c);
+    </script>
+    <pre class="my-5 border py-5">
+        var a =[2,3,4,5];
+        var c= 1;
+        for(let i=0;i&lt;a.length;i++)
+        {
+            c*=a[i];
+        }
+    
+        document.write(c);
+    </pre>
+
+    <p class='my-3'><b>Задача 4.</b> Дан массив с элементами 2, 5, 9, 15, 0, 4. С помощью цикла for и оператора if выведите на экран столбец тех элементов массива, которые больше 3-х, но меньше 10</p>
+    <script type="text/javascript">
+        var a =[2,5,9,15,0,4];
+        for(let i=0;i<a.length;i++)
+        {
+            if(a[i]>3 && a[i]<10)
+            document.write(a[i]+"<br>");
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        var a =[2,5,9,15,0,4];
+        for(let i=0;i&lt;a.length;i++)
+        {
+            if(a[i]>3 && a[i]&lt;10)
+            document.write(a[i]+"&lt;br&gt;");
+        }
+    </pre>
+
+    <p class='my-3'><b>Задача 5.</b> Дан массив с элементами 1, 2, 5, 9, 4, 13, 4, 10. С помощью цикла for и оператора if проверьте есть ли в массиве элемент со значением, равным 4. 
+    Если есть - выведите на экран 'Есть!' и выйдите из цикла. Если нет - ничего делать не надо</p>
+    <script type="text/javascript">
+        var a =[1,2,5,9,4,13,4,10];
+        var b = false;
+        for(let i=0;i<a.length;i++)
+        {
+            if(a[i]==4)
+            b=true;
+        }
+        if (b=true)
+            document.write("Да");
+        else
+            document.write("Нет");
+    </script>
+    <pre class="my-5 border py-5">
+        var a =[1,2,5,9,4,13,4,10];
+        var b = false;
+        for(let i=0;i&lt;a.length;i++)
+        {
+            if(a[i]==4)
+            b=true;
+        }
+        if (b=true)
+            document.write("Да");
+        else
+            document.write("Нет");
+    </pre>
+
+    <p class='my-3'><b>Задача 6.</b> Составьте массив дней недели. С помощью цикла for выведите все дни недели, а выходные дни выведите жирным.</p>
+    
+    <script type="text/javascript">
+        var a =["Понедельник", "Вторник", "Среда", "Четверг", "Пятница","Суббота","Воскресенье"];
+    
+        for(let i=0;i<a.length;i++)
+        {
+            if(a[i]=="Суббота" || a[i]=="cуббота" || a[i]=="Воскресенье" ||a[i]=="dоскресенье")
+            {
+                    document.write("<b>"+a[i]+"</b>"+"<br>");
+    
+            }
+            else
+                document.write(a[i]+"<br>");
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        var a =["Понедельник", "Вторник", "Среда", "Четверг", "Пятница","Суббота","Воскресенье"];
+    
+        for(let i=0;i&lt;a.length;i++)
+        {
+            if(a[i]=="Суббота" || a[i]=="cуббота" || a[i]=="Воскресенье" ||a[i]=="dоскресенье")
+            {
+                    document.write("&lt;b&gt;"+a[i]+"&lt;/b&gt;"+"&lt;br&gt;");
+    
+            }
+            else
+                document.write(a[i]+"&lt;br&gt;");
+        }
+    </pre>
+
+    </div>
+    
+    
+    
+    <h1 class="mt-5 text-center mnext" onclick="asdfa()">2. Доп задачи (циклы)</h1>
+    
+    <script type="text/javascript">
+        function asdfa()
+        {
+            var gf = document.getElementById('block2');
+            if(gf.style.display=="none")
+            gf.style.display="block";
+            else
+            gf.style.display="none";
+            
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        function asdfa()
+        {
+            var gf = document.getElementById('block2');
+            if(gf.style.display=="none")
+            gf.style.display="block";
+            else
+            gf.style.display="none";
+            
+        }
+    </pre>
+
+    
+    <div class="mt-3 col-12 conter" id="block2">
+    <p class='my-3'><b>Задача 1.</b> Дан массив отрицательных и положительных чисел. Произвести сложение всех четных положительных  чисел , и умножение всех нечетных положительных  чисел ,после чего возвести сумму первых ,в степень  произведения вторых. Если полученное число будет больше 777,то делим это число на сумму модулей всех отрицательных чисел массива. Выводим конечный результат.
+    </p>
+    <script type="text/javascript">
+        
+            var a =[1,2,3,4,3,-1,-2,-3,-4,-5,-6];
+    
+            var ch=0;
+            var nch=1;
+            var mod=1;
+    
+    
+        for(let i=0;i<a.length;i++)
+        {
+            if(a[i]>=0 && a[i]%2==0)
+            ch+=a[i];
+    
+            if(a[i]>=0 && a[i]%2!=0)
+            nch*=a[i];
+    
+            if(a[i]<0)
+            mod+=a[i]*-1;
+        }
+    
+        var k = ch;
+    
+        for(let i=1;i<nch;i++)
+        {
+            k*=ch;
+        }
+    
+        if(k>777)
+        k/=mod;
+            
+        document.write(Math.round(k,5));
+    </script>
+    <pre class="my-5 border py-5">
+        var a =[1,2,3,4,3,-1,-2,-3,-4,-5,-6];
+    
+            var ch=0;
+            var nch=1;
+            var mod=1;
+    
+    
+        for(let i=0;i&lt;a.length;i++)
+        {
+            if(a[i]>=0 && a[i]%2==0)
+            ch+=a[i];
+    
+            if(a[i]>=0 && a[i]%2!=0)
+            nch*=a[i];
+    
+            if(a[i]&lt;0)
+            mod+=a[i]*-1;
+        }
+    
+        var k = ch;
+    
+        for(let i=1;i&lt;nch;i++)
+        {
+            k*=ch;
+        }
+    
+        if(k>777)
+        k/=mod;
+            
+        document.write(Math.round(k,5));
+    </pre>
+ 
+    <p class='my-3'><b>Задача 2.</b> Напишите программу, которая выводит через console.log все числа от 1 до 100, с двумя исключениями. Для чисел, нацело делящихся на 3, она должна выводить ‘Fizz’, а для чисел, делящихся на 5 (но не на 3) – ‘Buzz’.Когда сумеете – исправьте её так, чтобы она выводила «FizzBuzz» для всех чисел, которые делятся и на 3 и на 5.</p>
+    <input type="button" name="" onclick="acs()" value="Инициировать" class="vipolnit">
+    <script type="text/javascript">
+        function acs(){	
+            for(let i=1;i<=100;i++)
+                {
+                    if(i%3==0)
+                    {
+                        console.log("Fizz");
+                    }
+                        else if(i%5==0 && i%3!=0)
+                    {
+                        console.log("Buzz");
+                    }
+                        else if(i%5==0 && i%3==0)
+                        {
+                        console.log("FizzBuzz");
+                        }
+                        else
+                    {
+                        console.log(i);
+                    }
+                }
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        function acs(){	
+            for(let i=1;i&lt;=100;i++)
+                {
+                    if(i%3==0)
+                    {
+                        console.log("Fizz");
+                    }
+                        else if(i%5==0 && i%3!=0)
+                    {
+                        console.log("Buzz");
+                    }
+                        else if(i%5==0 && i%3==0)
+                        {
+                        console.log("FizzBuzz");
+                        }
+                        else
+                    {
+                        console.log(i);
+                    }
+                }
+        }
+    </pre>
+
+    </div>
+    
+    <h1 class="mt-5 text-center mnext" onclick="qweee()">3. Строки задачи</h1>
+    
+    <script type="text/javascript">
+        function qweee()
+        {
+            var gf = document.getElementById('block3');
+            if(gf.style.display=="none")
+            gf.style.display="block";
+            else
+            gf.style.display="none";
+            
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        function qweee()
+        {
+            var gf = document.getElementById('block3');
+            if(gf.style.display=="none")
+            gf.style.display="block";
+            else
+            gf.style.display="none";
+            
+        }
+    </pre>
+
+    
+    <div class="mt-3 col-12 conter" id="block3"> 
+        <p class='my-3'><b>Задача 1.</b> Дана строка 'aaa@bbb@ccc'. Замените все @ на '!' с помощью глобального поиска и замены.</p>
+    
+    <script type="text/javascript">
+        var a="aaa@bbb@ccc";
+        
+        var b= a.replace(/@/g,"!");
+        document.write(b);
+    
+    </script>
+    <pre class="my-5 border py-5">
+        var a="aaa@bbb@ccc";
+        
+        var b= a.replace(/@/g,"!");
+        document.write(b);
+    </pre>
+
+    <p class='my-3'><b>Задача 2.</b> Дана строка 'aaa bbb ccc'. Вырежите из нее слово 'bbb' тремя разными способами (через substr, substring, slice).</p>
+    <script type="text/javascript">
+        var a= 'aaa bbb ccc';
+        document.write("substr = "+ a.substr(4,3)+"<br>");
+        document.write("substring = "+ a.substring(4,7)+"<br>");
+        document.write("slice = "+ a.slice(4,7)+"<br>");
+    
+    </script>
+    <pre class="my-5 border py-5">
+        var a= 'aaa bbb ccc';
+        document.write("substr = "+ a.substr(4,3)+"<br>");
+        document.write("substring = "+ a.substring(4,7)+"<br>");
+        document.write("slice = "+ a.slice(4,7)+"<br>");
+    </pre>
+
+        <p class='my-3'><b>Задача 3.</b> В переменной date лежит дата в формате '2025-12-31'. Преобразуйте эту дату в формат '31/12/2025'.</p>
+    <script type="text/javascript">
+        var a = '2025-12-31';
+        var b = a.split("-");
+        var c =""; 
+    
+        for(i = b.length-1; i>=0;i--)
+            if(i==0)
+            c+=b[i];
+            else
+            c+=b[i]+"/";
+    
+        document.write(c);
+    
+    </script>
+    <pre class="my-5 border py-5">
+        var a = '2025-12-31';
+        var b = a.split("-");
+        var c =""; 
+    
+        for(i = b.length-1; i>=0;i--)
+            if(i==0)
+            c+=b[i];
+            else
+            c+=b[i]+"/";
+    
+        document.write(c);
+    </pre>
+
+    </div>
+    
+    <h1 class="mt-5 text-center mnext" onclick="qweeeq()">4. Массивы задачи</h1>
+    
+    <script type="text/javascript">
+        function qweeeq()
+        {
+            var gf = document.getElementById('block4');
+            if(gf.style.display=="none")
+            gf.style.display="block";
+            else
+            gf.style.display="none";
+            
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        function qweeeq()
+        {
+            var gf = document.getElementById('block4');
+            if(gf.style.display=="none")
+            gf.style.display="block";
+            else
+            gf.style.display="none";
+            
+        }
+    </pre>
+
+    
+    <div class="mt-3 col-12 conter" id="block4"> 
+        <p class='my-3'><b>Задача 1.</b> Даны два массива: ['a', 'b', 'c'] и [1, 2, 3]. Объедините их вместе.</p>
+    <script type="text/javascript">
+        var a = ["a","b","c"];
+        var b = [1,2,3];
+        c = a.concat(b);
+    
+        for(let i=0; i<c.length;i++)
+            document.write(c[i]+" ");
+    
+    </script>
+    <pre class="my-5 border py-5">
+        var a = ["a","b","c"];
+        var b = [1,2,3];
+        c = a.concat(b);
+    
+        for(let i=0; i&lt;c.length;i++)
+            document.write(c[i]+" ");
+    </pre>
+
+    <p class='my-3'><b>Задача 2.</b> Дан массив ['a', 'b', 'c']. Добавьте ему в конец элементы 1, 2, 3.</p>
+    
+    <script type="text/javascript">
+        var a = ["a","b","c"];
+        
+        for(let i=1; i<=3;i++)
+            a.push(i);
+    
+        for(let i=0; i<a.length;i++)
+            document.write(a[i]+" ");
+    
+    
+    </script>
+    <pre class="my-5 border py-5">
+        var a = ["a","b","c"];
+        
+        for(let i=1; i&lt;=3;i++)
+            a.push(i);
+    
+        for(let i=0; i&lt;a.length;i++)
+            document.write(a[i]+" ");
+    </pre>
+
+    <p class='my-3'><b>Задача 3.</b> Переменная lang может принимать два значения: 'ru' и 'en'. Переменная month может принимать значения от 0 до 11.
+    Если lang имеет значение 'ru', то выведем название месяца, соответствующего содержимому переменной month, на русском языке, а если имеет значение 'en' – то на английском.</p>
+    <input type="button" name="" onclick="funct()" value="Выполнить">
+    <input type="button" name="" disabled="true" id="aa">
+    <script type="text/javascript">
+    
+        var peri = document.getElementById('aa');
+        function funct()
+        {let length = prompt();
+            let mounth = prompt();
+        
+            let rumas=["Янв","Фев","Март","Апр","Май","Июн","Июл","Авг","Сен","Окт","Ноя","Дек"];
+            let engmas=["Je","Fe","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"];
+        
+            if(length=="en")
+            {
+                for(let i=0; i<engmas.length;i++)
+                if(i==mounth)
+                peri.value=engmas[i];
+            }
+            else if(length=="ru")
+                for(let i=0; i<rumas.length;i++)
+                    if(i==mounth)
+                peri.value=engmas[i];}
+    
+    </script>
+    <pre class="my-5 border py-5">
+        var peri = document.getElementById('aa');
+        function funct()
+        {let length = prompt();
+            let mounth = prompt();
+        
+            let rumas=["Янв","Фев","Март","Апр","Май","Июн","Июл","Авг","Сен","Окт","Ноя","Дек"];
+            let engmas=["Je","Fe","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"];
+        
+            if(length=="en")
+            {
+                for(let i=0; i&lt;engmas.length;i++)
+                if(i==mounth)
+                peri.value=engmas[i];
+            }
+            else if(length=="ru")
+                for(let i=0; i&lt;rumas.length;i++)
+                    if(i==mounth)
+                peri.value=engmas[i];}
+    </pre>
+
+    <p class='my-3'><b>Задача 4.</b> Даны два массива: [1, 2, 3] и [4, 5, 6]. Объедините их вместе. 
+    </p>
+    <script type="text/javascript">
+        
+            var a = [1,2,3];
+            var b = [4,5,6];
+        c = a.concat(b);
+    
+        for(let i=0; i<c.length;i++)
+            document.write(c[i]+" ");
+    
+    </script>
+    <pre class="my-5 border py-5">
+        var a = [1,2,3];
+            var b = [4,5,6];
+        c = a.concat(b);
+    
+        for(let i=0; i&lt;c.length;i++)
+            document.write(c[i]+" ");
+    </pre>
+
+    <p class='my-3'><b>Задача 5.</b> Дан массив [1, 2, 3]. <br>
+    Сделайте из него массив [3, 2, 1].</p>
+    <script type="text/javascript">
+        var a = [1,2,3];
+        a.reverse();
+    
+        for(let i=0; i<a.length;i++)
+            document.write(a[i]+" ");
+    
+    </script>
+    <pre class="my-5 border py-5">
+        var a = [1,2,3];
+        a.reverse();
+    
+        for(let i=0; i&lt;a.length;i++)
+            document.write(a[i]+" ");
+    </pre>
+
+    <p class='my-3'><b>Задача 6.</b> Дан массив [1, 2, 3]. Добавьте ему в конец элементы 4, 5, 6. </p>
+    <script type="text/javascript">
+        var a = [1,2,3];
+        
+        for(let i=4; i<=6;i++)
+            a.push(i);
+    
+        for(let i=0; i<a.length;i++)
+            document.write(a[i]+" ");
+    
+    </script>
+    <pre class="my-5 border py-5">
+        var a = [1,2,3];
+        
+        for(let i=4; i&lt;=6;i++)
+            a.push(i);
+    
+        for(let i=0; i&lt;a.length;i++)
+            document.write(a[i]+" ");
+    </pre>
+
+    <p class='my-3'><b>Задача 7.</b> Дан массив [1, 2, 3]. Добавьте ему в начало элементы 4, 5, 6. </p>
+    <script type="text/javascript">
+        var a = [1,2,3];
+        
+        for(let i=6; i>=4;i--)
+            a.unshift(i);
+    
+        for(let i=0; i<a.length;i++)
+            document.write(a[i]+" ");
+    
+        
+    </script>
+    <pre class="my-5 border py-5">
+        var a = [1,2,3];
+        
+        for(let i=6; i>=4;i--)
+            a.unshift(i);
+    
+        for(let i=0; i&lt;a.length;i++)
+            document.write(a[i]+" ");
+    </pre>
+
+    </div>
+    
+    <h1 class="mt-5 text-center mnext" onclick="rt1y()">5. События</h1>
+    
+    <script type="text/javascript">
+        function rt1y()
+        {
+            var gf = document.getElementById('block5');
+            if(gf.style.display=="none")
+            gf.style.display="block";
+            else
+            gf.style.display="none";
+            
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        onclick="rt1y()"
+
+        function rt1y()
+        {
+            var gf = document.getElementById('block5');
+            if(gf.style.display=="none")
+            gf.style.display="block";
+            else
+            gf.style.display="none";
+            
+        }
+    </pre>
+
+    
+    <div class="mt-3 col-12 conter" id="block5"> 
+        <p class='my-3'><b>Задача 1.</b> Вывод текста через alert при наведении на кнопку.</p>
+    
+    <input type="botton" name="" value="Кнопка" onmouseover="Hey()" class="vipolnit1">
+    
+    <script type="text/javascript">
+        function Hey(){
+            alert("Hey!");
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        onmouseover="Hey()"
+
+        function Hey(){
+            alert("Hey!");
+        }
+    </pre>
+
+    <p class='my-3'><b>Задача 2.</b> Вывод текста через alert при двойном клике на кнопку.</p>
+    <input type="botton" name="" value="Кнопка" ondblclick="Hey()" class="vipolnit">
+    
+    <script type="text/javascript">
+        function Hey(){
+            alert("Hey!");
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        ondblclick="Hey()"
+        
+        function Hey(){
+            alert("Hey!");
+        }
+    </pre>
+
+    <p class='my-3'><b>Задача 3.</b> Вывод текста через alert при выходе мыши из области.</p>
+    
+    <input type="botton" name="" value="Кнопка" onmouseout="Hey()" class="vipolnit">
+    
+    <script type="text/javascript">
+        function Hey(){
+            alert("Hey!");
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        onmouseout="Hey()"
+
+        function Hey(){
+            alert("Hey!");
+        }
+    </pre>
+
+    <p class='my-3'><b>Задача 4.</b> Изменение картинки при нажатии на кнопку.</p>
+    
+    <input type="botton" value="Кнопка" onclick="imgerr()" class="vipolnit">
+    <img src="Рисунок1.png" id="butilakiiii" class="imgar">
+        <script type="text/javascript">	
+            var ik=0;
+            var bas = ["Рисунок1.png","playerShip.png"]
+            
+        function imgerr(){
+            var aaaa = document.getElementById("butilakiiii");
+            butilakiiii.src=bas[++ik];
+            if (ik==1)
+                ik=-1;
+        }
+    
+    </script>
+    <pre class="my-5 border py-5">
+        var ik=0;
+            var bas = ["Рисунок1.png","playerShip.png"]
+            
+        function imgerr(){
+            var aaaa = document.getElementById("butilakiiii");
+            butilakiiii.src=bas[++ik];
+            if (ik==1)
+                ik=-1;
+        }
+    </pre>
+
+    </div>
+    
+    <h1 class="mt-5 text-center mnext" onclick="ertt()">6. Доп задачи (события)</h1>
+    <script type="text/javascript">
+        function ertt()
+        {
+            var gf = document.getElementById('block6');
+            if(gf.style.display=="none")
+            gf.style.display="block";
+            else
+            gf.style.display="none";
+            
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        onclick="ertt()"
+
+        function ertt()
+        {
+            var gf = document.getElementById('block6');
+            if(gf.style.display=="none")
+            gf.style.display="block";
+            else
+            gf.style.display="none";
+            
+        }
+    </pre>
+
+    
+    <div class="mt-3 col-12 conter" id="block6"> 
+        <p class='my-3'><b>Задача 1.</b> Повторить раз.</p>
+    <script type="text/javascript">
+        var a = "";
+    
+        for(let i=1;i<=8;i++)
+        {
+            for(let j=i-1;j<i;j++)
+                a+="#";
+    
+            document.write(a + "<br>");
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        var a = "";
+    
+        for(let i=1;i&lt;=8;i++)
+        {
+            for(let j=i-1;j&lt;i;j++)
+                a+="#";
+    
+            document.write(a + "&lt;br&gt;");
+        }
+    </pre>
+
+    <p class='my-3'><b>Задача 2.</b> Повторить два.</p>
+    <script type="text/javascript">
+        for(let i=1;i<=8;i++)
+        {
+            if(i%2==0)
+                document.write("<pre># # # #</pre>");
+            else
+            document.write("<pre> # # # #</pre>");
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        for(let i=1;i<=8;i++)
+        {
+            if(i%2==0)
+                document.write("&lt;pre&gt;# # # #&lt;/pre&gt;");
+            else
+            document.write("&lt;pre&gt; # # # #&lt;/pre&gt;");
+        }
+    </pre>
+
+    <p class='my-3'><b>Задача 3.</b> Создать строку. Вывести количество гласных букв в строке.</p>
+    <input type="button" value="Выолнить" name="" onclick="vipi()">
+    <input type="button" name="" disabled="true">
+    <script type="text/javascript">
+    
+        function vipi()
+        {
+        var ser = ["а","и","у","э","о","я","е","ё"];
+        var co =0;
+    
+        var a = prompt("Введение строки: ");
+        document.write(a+"<br>");
+    
+        var b = a.toLowerCase();
+        for(let i=0;i<b.length;i++)
+        {
+            for(let j=0;j<ser.length;j++)
+            {
+                if(ser[j]==b[i])
+                    {co++; break}
+            }
+        }
+    
+    
+        document.write("Количество гласных: "+co);
+        }
+    
+    </script>
+    <pre class="my-5 border py-5">
+        onclick="vipi()"
+
+        function vipi()
+        {
+        var ser = ["а","и","у","э","о","я","е","ё"];
+        var co =0;
+    
+        var a = prompt("Введение строки: ");
+        document.write(a+"<br>");
+    
+        var b = a.toLowerCase();
+        for(let i=0;i&lt;b.length;i++)
+        {
+            for(let j=0;j&lt;ser.length;j++)
+            {
+                if(ser[j]==b[i])
+                    {co++; break}
+            }
+        }
+    
+    
+        document.write("Количество гласных: "+co);
+        }
+    </pre>
+
+    </div>
+    
+    <h1 class="mt-5 text-center mnext" onclick="zxcc()">7. События 2</h1>
+    <script type="text/javascript">
+        function zxcc()
+        {
+            var gf = document.getElementById('block7');
+            if(gf.style.display=="none")
+            gf.style.display="block";
+            else
+            gf.style.display="none";
+            
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        onclick="zxcc()"
+
+        function zxcc()
+        {
+            var gf = document.getElementById('block7');
+            if(gf.style.display=="none")
+            gf.style.display="block";
+            else
+            gf.style.display="none";
+            
+        }
+    </pre>
+
+    
+    <div class="mt-3 col-12 conter" id="block7"> 
+        <p class='my-3'><b>Задача 1.</b> Изменить текст в самой кнопке по нажатию на нее.</p>
+    <input type="button" name="" onclick="chang()" class="vipolnit" id="scrambly" value="Кнопка" style="color:white">
+    <script type="text/javascript">
+    
+            var idd=0;
+            var bd = ["Кнопка","Не кнопка"]
+            
+        function chang()
+        {
+            var aaa = document.getElementById("scrambly");
+            scrambly.value=bd[++idd];
+            if (idd==1)
+                idd=-1;
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        onclick="chang()"
+
+        var idd=0;
+            var bd = ["Кнопка","Не кнопка"]
+            
+        function chang()
+        {
+            var aaa = document.getElementById("scrambly");
+            scrambly.value=bd[++idd];
+            if (idd==1)
+                idd=-1;
+        }
+    </pre>
+
+    
+    <p class='my-3'><b>Задача 2.</b> Изменить цвет текста в input по нажатию на кнопку.</p>
+    <input type="button" name="" onclick="changi()" class="vipolnit" value="Кнопка">
+    <input type="text" name="" id="scacas" class="texp">
+    <script type="text/javascript">
+        var i=0;
+            var bqw = ["color:red","color:green"]
+            
+        function changi(){
+            var a = document.getElementById("scacas");
+            a.style=bqw[++i];
+            if (i==1)
+                i=-1;
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        onclick="changi()"
+
+        var i=0;
+            var bqw = ["color:red","color:green"]
+            
+        function changi(){
+            var a = document.getElementById("scacas");
+            a.style=bqw[++i];
+            if (i==1)
+                i=-1;
+        }
+    </pre>
+
+    
+    <p class='my-3'><b>Задача 3.</b> Создать две кнопки и input. При нажатии на одну кнопку, содержимое input блокируется, а при нажатии на другую блок снимается.</p>
+    <input type="button" name="" onclick="chang()" class="vipolnit" value="Заблокировать">
+    <input type="button" name="" onclick="changn()" class="vipolnit" value="Разблокировать">
+    <script type="text/javascript">
+        var i=0;
+            var b = ["color:red","color:green"]
+            
+        function chang(){
+            var a = document.getElementById("sc");
+            sc.disabled=true;
+        }
+    
+        function changn(){
+            var a = document.getElementById("sc");
+            sc.disabled=false;
+        }
+    </script>
+    <pre class="my-5 border py-5">
+        "chang()"
+        "changn()"
+
+        var i=0;
+            var b = ["color:red","color:green"]
+            
+        function chang(){
+            var a = document.getElementById("sc");
+            sc.disabled=true;
+        }
+    
+        function changn(){
+            var a = document.getElementById("sc");
+            sc.disabled=false;
+        }
+    </pre>
+
+    <input type="button" name="" id="sc" class="texp">
+    </div>

@@ -1,0 +1,279 @@
+html{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    font-weight: 500;
+    color: white;
+    text-decoration: none !important;
+}
+
+label{
+    font-family: monospace;
+    font-size: 14pt;
+}
+
+img{
+    height: 50px;
+    width: 50px;
+}
+
+p{
+    font-family: Franklin Gothic !important;
+    font-weight: 10;
+    word-wrap: break-word;
+}
+
+footer *{
+    font-size: 26pt !important;
+}
+
+.c-bt-color{
+    background-color: rgb(12, 12, 12) !important;
+    color: white !important;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.c-bt-color:focus{
+    outline-style: none !important;
+    outline: none !important;
+}
+
+.c-bt-color:hover{
+    background-color: rgb(42, 42, 42) !important;
+}
+
+.btn-active{
+    background-color: rgb(42, 42, 42) !important;
+}
+
+.code-style{
+    font-family: monospace !important;
+    font-weight: 10;
+    font-size: 16pt;
+}
+
+.code-style-h{
+    font-family: monospace !important;
+    font-weight: 10;
+}
+footer{
+    height: 50vh;
+}
+
+h1,h2,h3,h4,h5,h6{
+    word-wrap: break-word;
+}
+/*Colors*/
+.c-bg-color{
+    background-color: rgb(12, 12, 12) !important;
+}
+
+.c-bg-color2{
+    background-color: rgb(15, 15, 15) !important;
+}
+
+.c-bg-color3{
+    background-color: rgb(19, 19, 19) !important;
+}
+
+.c-bg-color4{
+    background-color: rgb(34, 34, 34) !important;
+}
+
+.navigation-p li:nth-child(1) a:hover{
+    color:  rgb(223, 223, 30) !important;
+}
+
+.navigation-p li:nth-child(2) a:hover{
+    color: rgb(3, 168, 3) !important;
+}
+
+.navigation-p li:nth-child(3) a:hover{
+    color: rgb(216, 0, 216)  !important;
+}
+
+.navigation-p li:nth-child(4) a:hover{
+    color: rgb(212, 50, 50) !important;
+}
+
+.navigation-p li:nth-child(5) a:hover{
+    color: rgb(61, 87, 204) !important;
+}
+
+.profile-link:hover{
+    color: rgb(126, 126, 255) !important;
+}
+.c-text-color{
+    color: rgb(27, 27, 27) !important;
+}
+
+.terminal-color, .js-class-color{
+    color: rgb(3, 168, 3);
+}
+
+.function-color{
+    color: rgb(127, 108, 255);
+}
+
+.argument-color{
+    color: rgb(104, 217, 255);
+}
+.js-color, .sql-color2, .error-color{
+    color: rgb(212, 50, 50);
+}
+.php-color{
+    color: rgb(61, 87, 204);
+}
+
+.python-color{
+    color: orange;
+}
+
+.string-color, .php-function-color{
+    color: rgb(223, 223, 30);
+}
+
+.smug-string-color{
+    color: rgb(223, 140, 107);
+}
+
+.sql-color{
+    color: rgb(216, 0, 216);
+}
+
+/*Heights*/
+
+@media screen and (min-width:980px){
+.h-5vh{
+    height: 10vh;
+}
+.h-10vh{
+    height: 10vh;
+}
+
+.h-15vh{
+    height: 15vh;
+}
+
+.h-20vh{
+    height: 20vh;
+}
+
+.h-25vh{
+    height: 25vh;
+}
+
+.h-30vh{
+    height: 30vh;
+}
+
+.h-40vh{
+    height: 40vh;
+}
+
+.h-50vh{
+    height: 50vh;
+}
+
+.h-60vh{
+    height: 60vh;
+}
+
+.h-70vh{
+    min-height: 70vh;
+}
+
+.h-80vh{
+    height: 80vh;
+}
+
+.h-90vh{
+    height: 90vh;
+}
+
+.h-100vh{
+    min-height: 100vh;
+}
+
+.h-110vh{
+    height: 120vh;
+}
+}
+
+@media screen and (max-width:600px){
+    .mh-60vh{
+        height: 50vh;
+    }
+    
+    .mh-80vh{
+        height: 50vh;
+    }
+
+    .scroll{
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .scroll::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+}
+/*image-size*/
+#pl img{
+    height: 80px;
+    width: 160px;
+}
+
+.pl-opacity, .block-opacity{
+    opacity: 0.3;
+}
+
+.scaling {
+    transition: transform 10ms;
+    transform: scale(1.1);
+    filter: sepia(1);
+}
+
+#whyUs p, #whyUs h1{
+    font-size: 20pt;
+}
+
+#main-profile-block img{
+    height: 100px;
+    width: 100px;
+}
+
+.button-block{
+    cursor: pointer;
+}
+
+.min-h-profile-block{
+    min-height: 40vh;
+}
+
+h4{
+    font-size: 13pt !important;
+}
+
+input:disabled{
+    opacity: 0.8 !important;
+}
+
+.scroll2{
+    scrollbar-color: rgb(12, 12, 12) !important;
+}
+
+.cursor{
+    cursor: pointer;
+}

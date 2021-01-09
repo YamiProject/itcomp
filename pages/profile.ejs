@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <title>Профиль: <%=info['user_email']%> </title>
+    <%-include("templates/linkscript.html")%>
+    
+</head>
+<body>
+    <%-include("templates/header.html")%>
+
+    <div class="container-fluid c-bg-color2">
+        <div class="col-12 py-5">
+            <div class="col p-2">
+                <h1 class="text-center text-white display-3 pb-5">prod.<span class="function-color">get_profile</span>(<span class="">"<%=sessemail%>"</span>)</h1>
+            </div>
+
+            <section class="col-12 my-2 pt-5" style="min-height: 60vh;">
+                <div class="col-12 row justify-content-around c-bg-color" style="min-height: 70vh;" id="main-profile-block">
+                    <div class="button-block place-f-class col-xl-3 min-h-profile-block py-5 col-12  c-bg-color h-100 row align-items-center justify-content-center">
+                        <div class="block-opacity">
+                            <div class="col-12 d-flex align-items-center justify-content-center">
+                                <img src="/img/modules_img/profile-png-icon.png" alt="profile-block-icon">
+                            </div>
+                            
+                            <div class="col mt-5">
+                                <h4 class="text-white code-style"><span class="argument-color">User</span>.<span class="function-color">get_info</span>(<span class="">"Профиль"</span>);</h4>
+                            </div>  
+                        </div>
+
+                        <div class="inner-block col-8 row" style="display: none;" id="form-of-change">
+                            
+                            <p><span class="function-color">profile_info()</span></p>
+                            <span class="function-color">Имя()</span>
+                            <input class="form-control" type="text" value="<%=info.user_name%>" id='u_name' disabled/>
+                            <input type="hidden" value="" id='u_name_h'/>
+                            <span class="function-color">Фамилия()</span>
+                            <input class="form-control" type="text" value="<%=info.user_sec_name%>" id='u_sname' disabled/>
+                            <input type="hidden" value="" id='u_sname_h'/>
+                            <span class="function-color">Пароль()</span>
+                            <input class="form-control mb-5" type="password" value="<%=info.user_password%>" id='u_pas' disabled/>
+                            <input type="hidden" value="" id='u_pas_h'>
+                            
+                            <button class="rounded-0 py-2 btn c-bt-color border border-secondary col-12" id="change-profile">Изменить</button>
+                            <button class="rounded-0 py-2 mb-3 col-12 btn c-bt-color border border-secondary" disabled id="change-save">Сохранить</button>
+                            <button id="backbutton" class="rounded-0 btn c-bt-color border border-secondary button-of-back col-12" >Назад</button>
+                        </div>
+                    </div>   
+
+                    <div class="button-block place-f-class col-xl-3 min-h-profile-block py-5 col-12  c-bg-color h-100 row align-items-center justify-content-center">
+                        <div class="block-opacity">
+                            <div class="col-12 d-flex align-items-center justify-content-center">
+                                <img src="/img/modules_img/profile-png-opt.png" alt="profile-block-img">
+                            </div>
+                            
+                            <div class="col mt-5">
+                                <h4 class="text-white code-style"><span class="argument-color">Заказ</span>.<span class="function-color">get_info</span>(<span class="">"Оптимизация"</span>);</h4>
+                            </div>
+                        </div>
+
+                        <div class="inner-block col-12" style="display: none;">
+                            <h5>Заказы "Оптимизация"</h5>
+                                <div class=" col-12 mb-4 px-4 d-flex overflow-auto scroll2">
+                                    <% orderdata.forEach(function(or){ %> 
+                                        <%if(or.ot_name=="Оптимизация"){%>
+                                            <%if(or.order_compl==0){%>
+                                            <div class="col-2 mx-1 my-2 border border-danger cursor" data-target="#modal<%=or.order_id%>" data-toggle="modal">
+                                                <% }%>
+                                            <%if(or.order_compl==1){%>
+                                                <div class="col-2 mx-1 my-2 border border-secondary" data-target="#modal<%=or.order_id%>" data-toggle="modal">
+                                                    <% }%>
+                                                <h6 class="text-center text-uppercase display-3"><%=or.pl_expansion.replace(/\./gi,'')%></h6>
+                                                <p class="text-white text-center"><%=or.order_cr_date%></p> 
+                                            </div>
+                                        <% }%>
+                                    <% }); %>
+                                </div>
+                            <button class="rounded-0 btn c-bt-color border border-secondary button-of-back col-12" >Назад</button>
+                        </div>
+                    </div>  
+
+                    <div class="button-block place-f-class col-xl-3 min-h-profile-block py-5 col-12  c-bg-color h-100 row align-items-center justify-content-center">
+                        <div class="block-opacity">
+                            <div class="col-12 d-flex align-items-center justify-content-center">
+                                <img src="/img/modules_img/profile-png-dev.png" alt="profile-block-img">
+                            </div>
+                            
+                            <div class="col mt-5">
+                                <h4 class="text-white code-style"><span class="argument-color">Заказ</span>.<span class="function-color">get_info</span>(<span class="">"Разработка"</span>);</h4>
+                            </div>
+                        </div>
+
+                        <div class="inner-block col-12" style="display: none;">
+                            
+                            <h5>Заказы "Разработка"</h5>
+                                <div class=" col-12 mb-4 d-flex overflow-auto scroll2">
+                                    <% orderdata.forEach(function(or){ %> 
+                                        <%if(or.ot_name=="Разработка"){%>
+                                            <%if(or.order_compl==0){%>
+                                            <div class="col-2 mx-1 my-2 border border-danger cursor" data-target="#modal<%=or.order_id%>" data-toggle="modal">
+                                                <% }%>
+                                            <%if(or.order_compl==1){%>
+                                                <div class="col-2 mx-1 my-2 border border-secondary" data-target="#modal<%=or.order_id%>" data-toggle="modal">
+                                                    <% }%>
+                                                <h6 class="text-center text-uppercase display-3"><%=or.pl_expansion.replace(/\./gi,'')%></h6>
+                                                <p class="text-white text-center"><%=or.order_cr_date%></p> 
+                                            </div>
+                                        <% }%>
+                                    <% }); %>
+                                </div>
+                            <button class="rounded-0 btn c-bt-color border border-secondary button-of-back col-12" >Назад</button>
+                        </div>
+                    </div>   
+
+                    <div class="button-block place-f-class col-xl-3 min-h-profile-block py-5 col-12  c-bg-color h-100 row align-items-center justify-content-center">
+                        <div class="block-opacity">
+                            <div class="col-12 d-flex align-items-center justify-content-center">
+                                <img src="/img/modules_img/profile-png-prod.png" alt="profile-block-img">
+                            </div>
+                            
+                            <div class="col mt-5">
+                                <h4 class="text-white code-style"><span class="argument-color">Заказ</span>.<span class="function-color">get_info</span>(<span class="">"Prod+"</span>);</h4>
+                            </div>
+                        </div>
+
+                        <div class="inner-block col-12" style="display: none;">
+                            <h5>Заказы Prod+</h5>
+                                <div class=" col-12 mb-4 d-flex overflow-auto scroll2">
+                                    <% orderdata.forEach(function(or){ %> 
+                                        <%if(or.ot_name=="Prod+"){%>
+                                            <%if(or.order_compl==0){%>
+                                            <div class="col-2 mx-1 my-2 border border-danger cursor" data-target="#modal<%=or.order_id%>" data-toggle="modal">
+                                                <% }%>
+                                            <%if(or.order_compl==1){%>
+                                                <div class="col-2 mx-1 my-2 border border-secondary cursor" data-target="#modal<%=or.order_id%>" data-toggle="modal">
+                                                    <% }%>
+                                                <h6 class="text-center text-uppercase display-3"><%=or.pl_expansion.replace(/\./gi,'')%></h6>
+                                                <p class="text-white text-center"><%=or.order_cr_date%></p> 
+                                            </div>
+                                        <% }%>
+                                    <% }); %>
+                                </div>
+                            <button class="rounded-0 btn c-bt-color border border-secondary button-of-back col-12" >Назад</button>
+                        </div>
+                    </div>     
+                </div>
+            </section>        
+
+            <div class="col-12 mb-5 mt-n3 row justify-content-around">
+                <button class="btn border border-secondary c-bt-color col-12 py-5" onclick="location.href='/logout'">$("Выход").exit();</button>
+            </div>  
+        </div>
+    </div>
+
+    <%orderdata.forEach(function(ord){ %> 
+        <div class="modal fade" id="modal<%=ord.order_id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content border-light" style="background-color: black;">
+                <div class="modal-header">
+                  <h5 class="modal-title text-white py-3" id="exampleModalLongTitle">Заказ: <%=ord.order_id%></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <h1 class="text-white text-center"><%=ord.order_name%></h1>
+                  <table class="table ">
+                        <tr>
+                            <td colspan="3" class="text-white"><%=ord.order_cr_date%></td>
+                        </tr>
+                        <tr>
+                            <td class="text-white">Статус:</td>
+                                <%if(ord.order_compl==0){%>
+                                    <td colspan="2" class="text-danger">Не готов</td>
+                                <%}else{%>
+                                    <td colspan="2" class="text-success">Заказ готов</td>
+                                <%}%>
+                        </tr>
+                        <tr>
+                            <td class="text-white">Услуга: <%=ord.ot_name%></td>
+                            <td class="text-white">Язык: <%=ord.pl_name%></td>
+                            <td class="text-white">Цена: <%=ord.order_final_price%></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="text-white">Описание: <%=ord.order_text%></td>
+                        </tr>
+                  </table>
+                  <%if(ord.order_compl==1){%>
+                    <a href="<%=ord.order_file%>" download class="text-white">Скачать...</a>
+                    <%}%>
+                </div>
+              </div>
+            </div>
+          </div>
+        <%});%>
+    
+    <%-include("templates/footer.html")%>
+</body>
+</html>

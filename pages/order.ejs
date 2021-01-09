@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <title>Заказ</title>
+    <%-include("templates/linkscript.html")%>
+    
+</head>
+<body>
+    <%-include("templates/header.html")%>
+
+    <section class="c-bg-color2 py-5">
+        <div class="container" id="offer-page-container" style="min-height: 120vh;">
+            <h1 class="text-center text-white display-4 pb-5">prod.<span class="function-color">CreateOrder</span>(){</h1>
+            <div class="col-12 mb-2">
+                <div class="col row">
+                    <label for="selection" class="text-white">Выберите услугу</label>
+                    <select name="" id="selection" class="form-control">
+                        <option value="" hidden></option>
+                        <option value="Оптимизация">Оптимизация</option>
+                        <option value="Разработка">Разработка</option>
+                        <option value="Prod+">Prod+</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-12  py-4 d-none" id="order-body">
+            </div>
+
+            <div class="col-12 border-top mt-3 d-none" id="order-final">
+            </div>
+        </div>
+    </section>
+    <%-include("templates/footer.html")%>
+</body>
+</html>

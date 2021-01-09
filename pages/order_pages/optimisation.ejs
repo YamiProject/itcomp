@@ -1,0 +1,20 @@
+<div class="col row">
+    <label for="OptOrderName" class="text-white">Укажите общее название вашего заказа:</label>
+    <input type="text" id="OptOrderName" class="form-control border-secondary">
+</div>
+
+<div class="col mt-3 row">
+    <label for="OptOrderText" class="text-white">Введите описание того, что выхотите видеть:</label>
+    <textarea cols="30" rows="10" id="OptOrderText" class="form-control border-secondary"></textarea>
+</div>
+
+<div class="col mt-3 row">
+    <label for="OptOrderFiles" class="text-white">Выберите один или несколько файлов (не более 20мб):</label>
+    <input type="file" id="OptOrderFiles" class="form-control-file text-white" multiple placeholder="Допустимо: .html/.css/.php/.js/.py)" accept=".html,.css,.php,.js,.py">
+</div>
+
+<div class="col mb-4 mt-0 row justify-content-end">
+    <span class="display-4 text-white">}</span><br>
+    <button class="btn col-12 mt-4 c-bt-color py-4 border-secondary border text-white" id='Calculate'>Рассчитать...</button>
+</div> 
+<script>$("input, select, textarea").focus(function(){$(this).removeClass("border-danger")})</script>

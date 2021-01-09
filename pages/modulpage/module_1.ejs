@@ -1,0 +1,696 @@
+
+    <h1 class="col-12 text-center display-4 function-color pb-5">Кальлкуятор</h1>
+	<div class="col-12 row justify-content-end">
+        <div class="col-12">
+            <input type="text" name="fi" class="col p-5" id="ekran"  value="">
+        </div>
+	
+	
+	<div class="col-8 row calc-b ml-1">
+		<input type="button" name="fir" class="col-4 py-5" value="1" onclick="firsti()">
+		<input type="button" name="sec" class="col-4 py-5" value="2" onclick="secti()">
+		<input type="button" name="thr" class="col-4 py-5" value="3" onclick="triti()">
+		<input type="button" name="fou" class="col-4 py-5" value="4" onclick="forti()">
+		<input type="button" name="fif" class="col-4 py-5" value="5" onclick="fifti()"> 
+		<input type="button" name="six" class="col-4 py-5" value="6" onclick="sixsti()">
+		<input type="button" name="sev" class="col-4 py-5" value="7" onclick="sevnti()">
+		<input type="button" name="eigh" class="col-4 py-5" value="8" onclick="eighsti()">
+		<input type="button" name="nin" class="col-4 py-5" value="9" onclick="ninesti()">
+		<input type="button" name="zero" class="col-8 py-5" value="0" onclick="zeroti()">
+		<input type="button" name="zap" class="col-4 py-5" value="," onclick="zapti()">
+	</div>
+
+	<div class="col justify-content-end calc-b row mr-1">
+		
+		<input type="button" id="min" class="col-6" value="√" onclick="kor()">
+		<input type="button" id="del" class="col-6" value="^" onclick="sqr()">
+		<input type="button" id="rav" class="col-6" value="sin()" onclick="sn()">
+		<input type="button" id="umn" class="col-6" value="cos()" onclick="cos()">
+		<input type="button" id="plu" class="col-6" value="+" onclick="dob()">
+		<input type="button" id="min" class="col-6" value="-" onclick="otn()">
+		<input type="button" id="del" class="col-6" value="*" onclick="umn()">
+		<input type="button" id="umn" class="col-6" value="/" onclick="del()">
+		<input type="button" id="plu" class="col-6" value="DEL" onclick="otch()">
+		<input type="button" name='ravka' id="rav" class="col-6" value="=" onclick="rav()">
+	</div>
+
+
+
+<script type="text/javascript">
+	
+	let show = "";
+	let str="";
+
+	var b = document.getElementById(ekran);
+
+	function firsti()
+	{
+		if(str=="")
+			ekran.value="";
+
+		str+="1";
+		ekran.value=str;
+	}
+
+	function secti()
+	{
+		if(str=="")
+			ekran.value="";
+
+		str+="2";
+		ekran.value=str;	
+	}
+
+	function triti()
+	{if(str=="")
+			ekran.value="";
+		str+="3";
+		ekran.value=str;
+	}
+
+	function forti()
+	{if(str=="")
+			ekran.value="";
+		str+="4";
+		ekran.value=str;
+	}
+
+	function fifti()
+	{if(str=="")
+			ekran.value="";
+		str+="5";
+		ekran.value=str;
+	}
+
+	function sixsti()
+	{if(str=="")
+			ekran.value="";
+		str+="6";
+		ekran.value=str;
+		
+	}
+
+	function sevnti()
+	{if(str=="")
+			ekran.value="";
+		str+="7";
+		ekran.value=str;
+	}
+
+	function eighsti()
+	{if(str=="")
+			ekran.value="";
+		str+="8";
+		ekran.value=str;
+	}
+
+	function ninesti()
+	{if(str=="")
+			ekran.value="";
+		str+="9";
+		ekran.value=str;
+	}
+
+	function zeroti()
+	{if(str=="")
+			ekran.value="";
+		str+="0";
+		ekran.value=str;
+	}
+
+	function zapti()
+	{
+		if(str!="" && str.slice(-1)!="-" && str.slice(-1)!="*" && 
+			str.slice(-1)!="+" && str.slice(-1)!="cos" && str.slice(-1)!="sin"
+			&& str.slice(-1)!="√"  && str.slice(-1)!="^" && str.slice(-1)!="/")
+		{if(str=="")
+			ekran.value="";
+
+			str+=".";
+			ekran.value+=".";
+		}
+	}
+
+	function del()
+	{
+		if(str!="" && str.slice(-1)!="-" && str.slice(-1)!="*" && 
+			str.slice(-1)!="+" && str.slice(-1)!="cos" && str.slice(-1)!="sin"
+			&& str.slice(-1)!="√"  && str.slice(-1)!="^")
+		{if(str=="")
+			ekran.value="";
+
+			str+="/";
+			ekran.value=str;
+		}
+	}
+
+	function dob()
+	{
+		if(str!="" && str.slice(-1)!="-" && str.slice(-1)!="*" && 
+			str.slice(-1)!="+" && str.slice(-1)!="cos" && str.slice(-1)!="sin"
+			&& str.slice(-1)!="√"  && str.slice(-1)!="^")
+		{if(str=="")
+			ekran.value="";
+			
+			str+="+";
+			ekran.value=str;
+		}
+	}
+
+	function otn()
+	{
+		if(str!="" && str.slice(-1)!="-" && 
+			str.slice(-1)!="+" && str.slice(-1)!="cos" && str.slice(-1)!="sin"
+			 && str.slice(-1)!="^")
+		if(str!="")
+		{if(str=="")
+			ekran.value="";
+			
+			str+="-";
+			ekran.value=str;
+		}
+	}
+
+	function umn()
+	{
+		if(str!="" && str.slice(-1)!="-" && str.slice(-1)!="*" && 
+			str.slice(-1)!="+" && str.slice(-1)!="cos" && str.slice(-1)!="sin"
+			&& str.slice(-1)!="√"  && str.slice(-1)!="^")
+		{if(str=="")
+			ekran.value="";
+			
+			str+="*";
+			ekran.value=str;
+		}
+	}
+
+	function sqr()
+	{
+		if(str!="" && str.slice(-1)!="*" && str.slice(-1)!="-" && 
+			str.slice(-1)!="+" && str.slice(-1)!="cos" && str.slice(-1)!="sin"
+			&& str.slice(-1)!="√"  && str.slice(-1)!="^")
+		{if(str=="")
+			ekran.value="";
+			
+			str+="^";
+			ekran.value=str;
+		}
+	}
+
+	function kor()
+	{
+		if(str.slice(-1)!="√")
+		{if(str=="")
+			ekran.value="";
+			
+			str+="√";
+			ekran.value=str;
+		}
+	}
+
+	function sn()
+	{
+		if(str.slice(-1)!="cos"
+			&& str.slice(-1)!="√" && str.slice(-1)!="sin" && str.slice(-1)!="^")
+		{if(str=="")
+			ekran.value="";
+			
+			str+="sin";
+			ekran.value=str;
+
+		}
+	}
+
+	function cos()
+	{
+		if(str.slice(-1)!="cos" && str.slice(-1)!="sin"
+			&& str.slice(-1)!="√"  && str.slice(-1)!="^")
+		{if(str=="")
+			ekran.value="";
+
+			str+="cos"; 
+			ekran.value=str;
+		}	
+	}
+
+
+	function rav()
+	{	
+		if(ekran.value!="")
+		{
+		let vich = [];
+		let znak = "";
+		let cds = ekran.value;
+		let a = cds.split("");
+
+		for(let i=0;i<a.length;i++)
+		{
+			if(a[i]!="+" && a[i]!="-" && a[i]!="/" && a[i]!="*" && a[i]!="^")
+			{	
+
+				if(a[i]=="c" || a[i]=="s" || a[i]=="√")
+				{
+					if(znak!="")
+					{
+						vich.push(znak);
+						znak="";
+						vich.push("*");
+						vich.push(a[i]);
+					}
+					else
+					{
+						vich.push(a[i]);
+					}
+
+					if(a[i]=="c" || a[i]=="s")
+					a.splice(i,2);
+				}
+				else
+				{
+					znak+=a[i];
+				}
+			}
+			else
+			{
+				vich.push(znak);
+				vich.push(a[i]);
+				znak="";
+
+			}
+			if(i==a.length-1)
+			{
+				vich.push(znak);
+			}
+		}
+
+		for(let i=0;i<vich.length;i++)
+		{
+			if(vich[i]=="c")
+			{	
+				g = Math.cos(parseFloat(vich[i+1]));
+				vich[i]=g;
+				vich.splice(i+1,2);
+				i=0;
+			}
+
+
+			if(vich[i]=="s")
+			{	
+				g = Math.sin(parseFloat(vich[i+1]));
+				vich[i]=g;
+				vich.splice(i+1,2);
+				i=0;
+			}
+
+			if(vich[i]=="√")
+			{	
+				g = Math.sqrt(parseFloat(vich[i+1]));
+				vich[i]=g;
+				vich.splice(i+1,2);
+				i=0;
+			}
+
+			
+			if(vich[i]=="^")
+			{	
+				/*let nm = vich[i-1];
+
+				for(let j=0;j<vich[i+1]-1;j++)
+				{
+					nm*=vich[i-1];
+				}
+				vich[i-1]=nm;
+				vich.splice(i,2);
+				i=0;*/
+
+				g = parseFloat(vich[i-1])**parseFloat(vich[i+1]);
+				vich[i-1]=g;
+				vich.splice(i,2);
+				i=0;
+			}
+		}
+		
+	
+	
+
+		for(let i=0;i<vich.length;i++)
+		{
+			if(vich[i]=="*")
+			{	
+				g = parseFloat(vich[i-1])*parseFloat(vich[i+1]);
+				vich[i-1]=g;
+				vich.splice(i,2);
+				i=0;
+			}
+
+
+			if(vich[i]=="/")
+			{	
+				g = parseFloat(vich[i-1])/parseFloat(vich[i+1]);
+				vich[i-1]=g;
+				vich.splice(i,2);
+				i=0;
+			}
+		}
+
+		
+
+		for(let i=0;i<vich.length;i++)
+		{
+			if(vich[i]=="+")
+			{	
+				g = parseFloat(vich[i-1])+parseFloat(vich[i+1]);
+				vich[i-1]=g;
+				vich.splice(i,2);
+				i=0;
+			}
+
+			if(vich[i]=="-")
+			{	
+				g = parseFloat(vich[i-1])-parseFloat(vich[i+1]);
+				vich[i-1]=g;
+				vich.splice(i,2);
+				i=0;
+			}
+		}
+
+
+		ekran.value=vich[0];
+		str="";
+	    znak = "";
+	    show = "";
+		}
+	}
+
+	ekran.onkeydown = ekran.onkeyup = ekran.onkeypress = handle;
+	function handle(e)
+	{
+	if(e.key=='Enter' && ekran.value!='')
+	{	
+		
+		let vich = [];
+		let znak = "";
+		let cds = ekran.value;
+		let a = cds.split("");
+
+		for(let i=0;i<a.length;i++)
+		{
+			if(a[i]!="+" && a[i]!="-" && a[i]!="/" && a[i]!="*" && a[i]!="^")
+			{	
+
+				if(a[i]=="c" || a[i]=="s" || a[i]=="√")
+				{
+					if(znak!="")
+					{
+						vich.push(znak);
+						znak="";
+						vich.push("*");
+						vich.push(a[i]);
+					}
+					else
+					{
+						vich.push(a[i]);
+					}
+
+					if(a[i]=="c" || a[i]=="s")
+					a.splice(i,2);
+				}
+				else
+				{
+					znak+=a[i];
+				}
+			}
+			else
+			{
+				vich.push(znak);
+				vich.push(a[i]);
+				znak="";
+
+			}
+			if(i==a.length-1)
+			{
+				vich.push(znak);
+			}
+		}
+
+		for(let i=0;i<vich.length;i++)
+		{
+			if(vich[i]=="c")
+			{	
+				g = Math.cos(parseFloat(vich[i+1]));
+				vich[i]=g;
+				vich.splice(i+1,2);
+				i=0;
+			}
+
+
+			if(vich[i]=="s")
+			{	
+				g = Math.sin(parseFloat(vich[i+1]));
+				vich[i]=g;
+				vich.splice(i+1,2);
+				i=0;
+			}
+
+			if(vich[i]=="√")
+			{	
+				g = Math.sqrt(parseFloat(vich[i+1]));
+				vich[i]=g;
+				vich.splice(i+1,2);
+				i=0;
+			}
+
+			
+			if(vich[i]=="^")
+			{	
+				/*let nm = vich[i-1];
+
+				for(let j=0;j<vich[i+1]-1;j++)
+				{
+					nm*=vich[i-1];
+				}
+				vich[i-1]=nm;
+				vich.splice(i,2);
+				i=0;*/
+
+				g = parseFloat(vich[i-1])**parseFloat(vich[i+1]);
+				vich[i-1]=g;
+				vich.splice(i,2);
+				i=0;
+			}
+		}
+		
+	
+	
+
+		for(let i=0;i<vich.length;i++)
+		{
+			if(vich[i]=="*")
+			{	
+				g = parseFloat(vich[i-1])*parseFloat(vich[i+1]);
+				vich[i-1]=g;
+				vich.splice(i,2);
+				i=0;
+			}
+
+
+			if(vich[i]=="/")
+			{	
+				g = parseFloat(vich[i-1])/parseFloat(vich[i+1]);
+				vich[i-1]=g;
+				vich.splice(i,2);
+				i=0;
+			}
+		}
+
+		
+
+		for(let i=0;i<vich.length;i++)
+		{
+			if(vich[i]=="+")
+			{	
+				g = parseFloat(vich[i-1])+parseFloat(vich[i+1]);
+				vich[i-1]=g;
+				vich.splice(i,2);
+				i=0;
+			}
+
+			if(vich[i]=="-")
+			{	
+				g = parseFloat(vich[i-1])-parseFloat(vich[i+1]);
+				vich[i-1]=g;
+				vich.splice(i,2);
+				i=0;
+			}
+		}
+
+
+		ekran.value=vich[0];
+		str="";
+	    znak = "";
+	    show = "";
+			
+	}
+}
+
+	document.addEventListener('keyup', ravka)
+	function ravka(e)
+	{
+		if (e.keyCode==13 && ekran.value!='')
+		{
+			let vich = [];
+		let znak = "";
+		let cds = ekran.value;
+		let a = cds.split("");
+
+		for(let i=0;i<a.length;i++)
+		{
+			if(a[i]!="+" && a[i]!="-" && a[i]!="/" && a[i]!="*" && a[i]!="^")
+			{	
+
+				if(a[i]=="c" || a[i]=="s" || a[i]=="√")
+				{
+					if(znak!="")
+					{
+						vich.push(znak);
+						znak="";
+						vich.push("*");
+						vich.push(a[i]);
+					}
+					else
+					{
+						vich.push(a[i]);
+					}
+
+					if(a[i]=="c" || a[i]=="s")
+					a.splice(i,2);
+				}
+				else
+				{
+					znak+=a[i];
+				}
+			}
+			else
+			{
+				vich.push(znak);
+				vich.push(a[i]);
+				znak="";
+
+			}
+			if(i==a.length-1)
+			{
+				vich.push(znak);
+			}
+		}
+
+		for(let i=0;i<vich.length;i++)
+		{
+			if(vich[i]=="c")
+			{	
+				g = Math.cos(parseFloat(vich[i+1]));
+				vich[i]=g;
+				vich.splice(i+1,2);
+				i=0;
+			}
+
+
+			if(vich[i]=="s")
+			{	
+				g = Math.sin(parseFloat(vich[i+1]));
+				vich[i]=g;
+				vich.splice(i+1,2);
+				i=0;
+			}
+
+			if(vich[i]=="√")
+			{	
+				g = Math.sqrt(parseFloat(vich[i+1]));
+				vich[i]=g;
+				vich.splice(i+1,2);
+				i=0;
+			}
+
+			
+			if(vich[i]=="^")
+			{	
+				/*let nm = vich[i-1];
+
+				for(let j=0;j<vich[i+1]-1;j++)
+				{
+					nm*=vich[i-1];
+				}
+				vich[i-1]=nm;
+				vich.splice(i,2);
+				i=0;*/
+
+				g = parseFloat(vich[i-1])**parseFloat(vich[i+1]);
+				vich[i-1]=g;
+				vich.splice(i,2);
+				i=0;
+			}
+		}
+		
+	
+	
+
+		for(let i=0;i<vich.length;i++)
+		{
+			if(vich[i]=="*")
+			{	
+				g = parseFloat(vich[i-1])*parseFloat(vich[i+1]);
+				vich[i-1]=g;
+				vich.splice(i,2);
+				i=0;
+			}
+
+
+			if(vich[i]=="/")
+			{	
+				g = parseFloat(vich[i-1])/parseFloat(vich[i+1]);
+				vich[i-1]=g;
+				vich.splice(i,2);
+				i=0;
+			}
+		}
+
+		
+
+		for(let i=0;i<vich.length;i++)
+		{
+			if(vich[i]=="+")
+			{	
+				g = parseFloat(vich[i-1])+parseFloat(vich[i+1]);
+				vich[i-1]=g;
+				vich.splice(i,2);
+				i=0;
+			}
+
+			if(vich[i]=="-")
+			{	
+				g = parseFloat(vich[i-1])-parseFloat(vich[i+1]);
+				vich[i-1]=g;
+				vich.splice(i,2);
+				i=0;
+			}
+		}
+
+
+		ekran.value=vich[0];
+		str="";
+	    znak = "";
+	    show = "";
+		}
+	}
+
+	function otch(){
+		str="";
+		massch = [];
+	    masszn = [];
+	    znak = "";
+		ekran.value=str;
+	}
+	
+
+</script>
+</div>
+

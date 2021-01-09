@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ошибка404</title>
+    <%-include("templates/linkscript.html")%>
+</head>
+<body>
+    <div class="container-fluid c-bg-color h-100vh align-items-center row justify-content-center">
+        <div class="col col-6">
+            <h1 class="code-style-h error-color font-bold display-2">Ошибка404</h1>
+            <p class="text-white code-style string-color">Мы изо всех пытались найти эту страницу, но ещё существование было стёрто.<br> 
+                Пожалуйста, вернитесь на главную страницу и попробуйте снова.</p>
+            
+            <button onclick="location.href='/'" class="btn c-bt-color border border-secondary code-style">Вернутся на главную страницу</button>
+        </div>
+    </div>
+</body>
+</html>
